@@ -1,0 +1,63 @@
+@mixin font_lato_normal_400 {
+    font-family: Lato, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+
+@mixin font_lato_italic_700 {
+    font-family: Lato, sans-serif;
+    font-style: italic;
+    font-weight: 700;
+}
+
+@mixin font_monserrat_normal_400 {
+    font-family: Lato, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+
+@mixin font_monserrat_normal_700 {
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+}
+
+@mixin section_title {
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+@mixin header_btn {
+    background-color: $color_lavender;
+    border-radius: 40px;
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    text-align: center;
+    color: #FFFFFF;
+    border: 2px  solid $color_lavender;
+}
+
+@mixin header_btn_hover {
+    border: 2px  solid $color_lavender;
+    background: white;
+    color: $color_lavender;
+    cursor: pointer;
+}
+
+@mixin font_size($font-size, $line-height) {
+    font-size: $font-size;
+    line-height: $line-height;
+}
+
+@mixin header_btn_medium_large {
+    @include font_size (21px, 22px);
+    padding-top: 23px;
+    padding-bottom: 23px;
+    width: 390px;
+}
+

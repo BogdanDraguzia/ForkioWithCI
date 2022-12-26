@@ -1,0 +1,123 @@
+@import "mixins";
+@import "variables";
+
+@media all and (max-width: 480px) {
+    .about__container {
+        background: url("../img/png/about/testmonials-bg\ 1.png");
+        background-size: cover;
+        background-position: center;
+        padding: 0 10px;
+        background-color: #4c3b4e;
+    }
+
+    .section__title {
+        margin-top: 57px;
+        @include font-size(36px, 48px);
+    }
+
+    .about__list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 4%;
+        margin-top: 53px;
+    }
+
+    .about__text {
+        padding-top: 220px;
+        padding-bottom: 70px;
+
+        &::after {
+            width: 245px;
+            top: 370px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    .about__list-item {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+@media all and (min-width: 481px) and (max-width: 992px) {
+
+    .about__container {
+        background: url("../img/png/about/bg2.png");
+        background-size: cover;
+        background-position: center;
+        background-color: #4c3b4e;
+        padding: 0 10px;
+    }
+
+    .section__title {
+        margin-top: 87px;
+        @include font-size(42px, 44px);
+    }
+
+    .about__list {
+        margin-top: 88px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(35%, 1fr));
+        column-gap: 6%;
+        row-gap: 52px;
+    }
+
+    .about__list-item {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .about__list-item img {
+        max-width: 200px;
+    }
+
+    .about__text {
+        padding-top: 50px;
+        margin-left: 20px;
+        margin-right: 20px;
+
+        &::after {
+            width: 80%;
+            bottom: 10px;
+        }
+    }
+}
+
+@media all and (min-width: 993px) {
+    .about__container {
+        background: url("../img/png/about/bg3.png");
+        background-size: cover;
+        background-position-x: center;
+        background-color: #4c3b4e;
+    }
+
+    .section__title {
+        margin-top: 108px;
+        @include font-size(48px, 50px);
+    }
+
+    .about__list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
+        margin: 0 96px;
+        margin-top: 80px;
+        column-gap: 80px;
+        row-gap: 100px;
+    }
+
+    .about__text {
+        display: block;
+        max-width: 887px;
+        margin: 0 auto;
+        margin-top: 118px;
+        margin-bottom: 30px;
+
+        &::after {
+            width: 780px;
+            bottom: 10px;
+        }
+    }
+
+
+}

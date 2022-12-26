@@ -1,0 +1,117 @@
+@import "mixins";
+@import "variables";
+
+.wrapper {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 0 auto;
+}
+
+.what-you-get {
+    overflow-x: hidden;
+
+    &__wrapper {
+        padding-top: 37px;
+        padding-bottom: 10px;
+        text-align: center;
+    }
+    &__title {
+        @include font_monserrat_normal_400;
+        font-weight: bold;
+        font-size: 32px;
+        color: #635c73;
+        margin-bottom: 36px;
+    }
+    &__item-img-container {
+        margin-bottom: 27px;
+    }
+    &__item-title {
+        @include font_monserrat_normal_400;
+        font-size: 16px;
+        font-weight: 300;
+        color: #323232;
+        margin-bottom: 14px;
+    }
+    &__item-text {
+        @include font_lato_normal_400;
+        font-size: 14px;
+        color: #848e97;
+        line-height: 21px;
+        margin-bottom: 38px;
+    }
+    &__main-img {
+        width: 103%;
+        &--desktop {
+            display: none;
+        }
+    }
+}
+
+@media screen and (min-width: 480px) {
+    .what-you-get {
+        &__wrapper {
+            padding-top: 32px;
+        }
+        &__title {
+            font-size: 42px;
+        }
+        &__content-block {
+            display: flex;
+            justify-content: space-between;
+            &:last-child {
+                margin-bottom: 30px;
+            }
+        }
+        &__item-img-container {
+            width: 30%;
+            margin: 0;
+        }
+        &__item-main-container {
+            text-align: start;
+            width: 70%;
+        }
+        &__main-img {
+            width: 102%;
+            &--mobile {
+                display: none;
+            }
+            &--desktop {
+                display: flex;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1063px) {
+    .what-you-get {
+        background: #f4f4f4;
+        &__wrapper {
+            padding-top: 98px;
+            padding-bottom: 52px;
+
+            position: relative;
+            align-items: center;
+        }
+        &__title {
+            font-size: 48px;
+            position: absolute;
+            top: 75px;
+            right: -18px;
+        }
+        &__content {
+            width: 47%;
+        }
+        &__main-img {
+            width: 700px;
+            right: -121px;
+            top: 132px;
+            position: absolute;
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .what-you-get {
+        font-size: 40px;
+    }
+}

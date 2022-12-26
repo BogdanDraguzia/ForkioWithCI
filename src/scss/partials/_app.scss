@@ -1,0 +1,300 @@
+@import "mixins";
+@import "variables";
+
+@media all and (max-width: 480px) {
+    .navbar {
+        height: 103px;
+        background-color: $background_color_grey;
+        padding: 0 10px;
+        position: relative;
+    }
+
+    .navbar__logo-wrapper {
+        width: 20%;
+        justify-content: start;
+    }
+
+    .navbar__logo-text {
+        display: none;
+    }
+
+    .navbar__btn-wrapper {
+        display: flex;
+        justify-content: center;
+        width: 60%;
+    }
+
+    .navbar__btn {
+        @include font-size(15px, 15px);
+        width: 119px;
+    }
+
+    .navbar__burger {
+        display: flex;
+        justify-content: end;
+        width: 20%;
+    }
+
+    .navbar__burger.open img {
+        content: url("../img/svg/app/cross.svg");
+    }
+
+    .navbar__list {
+        display: none;
+        flex-direction: column;
+        width: 90%;
+        z-index: 1;
+        position: absolute;
+        background: #333333;
+        left: 50%;
+        top: 103px;
+        transform: translateX(-50%);
+    }
+
+    .navbar__list-item {
+        @include font_monserrat_normal_400;
+        padding-left: 34px;
+        padding-top: 29px;
+        padding-bottom: 29px;
+        font-size: 26px;
+        line-height: 26px;
+        align-items: center;
+        border-bottom: 3px solid #474747;
+        color: #FFFFFF;
+        position: relative;
+
+        &:last-child {
+            margin-bottom: 17px;
+        }
+    }
+
+    .navbar__list-item.active {
+        color: $color_lavender;
+
+        &::before {
+            content: "";
+            position: absolute;
+            display: block;
+            background: $color_lavender;
+            width: 8px;
+            height: 53px;
+            left: 3px;
+            top: 19px;
+            z-index: 2;
+        }
+    }
+
+    .navbar__list.visible {
+        display: flex;
+    }
+
+    .header__content {
+        height: 614px;
+    }
+
+    .header__title {
+        @include font_size (48px, 48px);
+        margin-top: 50px;
+    }
+
+    .header__text {
+        @include font_monserrat_normal_400;
+        @include font_size (18px, 24px);
+    }
+
+    .header__text span {
+        text-transform: capitalize;
+    }
+
+    .header__subtext {
+        @include font_size (14px, 14px);
+        margin-top: 14px;
+    }
+
+    .header__btn {
+        @include font_size (18px, 20px);
+        padding-top: 13px;
+        padding-bottom: 13px;
+        width: 290px;
+    }
+
+}
+
+@media all and (min-width: 481px) and (max-width: 992px) {
+    .navbar {
+        height: 118px;
+        background-color: $background_color_grey;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0 10px;
+        min-width: 481px;
+    }
+
+    .navbar__logo-wrapper {
+        width: 48%;
+        display: flex;
+        padding-top: 15px;
+    }
+
+    .navbar__logo {
+        justify-content: center;
+    }
+
+    .navbar__btn-wrapper {
+        display: flex;
+        justify-content: end;
+        width: 48%;
+        padding-top: 15px;
+    }
+
+    .navbar__btn {
+        @include font_size (16px, 16px);
+        width: 145px;
+    }
+
+    .navbar__list-wrapper {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .navbar__list {
+        display: flex;
+        justify-content: space-between;
+        width: 500px;
+    }
+
+    .navbar__list-item {
+        @include font_monserrat_normal_700;
+        @include font-size(16px, 18px);
+        color: $color_lavender;
+    }
+
+    .navbar__burger {
+        display: none;
+    }
+
+    .header__content {
+        height: 675px;
+    }
+
+    .header__title {
+        @include font_size (72px, 72px);
+        margin-top: 69px;
+    }
+
+    .header__text {
+        @include font_lato_normal_400;
+        @include font_size (24px, 24px);
+        margin-top: 19px;
+    }
+
+    .header__subtext {
+        margin-top: 19px;
+    }
+
+    .header__btn {
+        @include header_btn_medium_large;
+    }
+}
+
+
+@media all and (min-width: 993px) {
+
+    .navbar {
+        height: 100px;
+        padding: 0 5%;
+    }
+
+    .navbar__logo-wrapper {
+        order: 0;
+        width: 32%;
+        padding-top: 15px;
+    }
+
+    .navbar__logo:hover .navbar__logo-text {
+        color: white;
+    }
+
+    .navbar__logo:hover .navbar__logo-img {
+        content: url("../img/svg/app/logo-hover.svg");
+    }
+
+    .navbar__logo {
+        justify-content: center;
+    }
+
+    .navbar__btn-wrapper {
+        order: 2;
+        width: 15%;
+        justify-content: start;
+        padding-top: 15px;
+        margin-left: 20px;
+    }
+
+    .navbar__btn {
+        @include font_size (16px, 16px);
+        width: 145px;
+
+        &:hover {
+            @include header_btn_hover;
+        }
+
+    }
+
+    .navbar__list-wrapper {
+        order: 1;
+        min-width: 500px;
+        padding-top: 15px;
+    }
+
+    .navbar__list {
+        display: flex;
+        justify-content: space-between;
+        min-width: 40%;
+    }
+
+    .navbar__list-item {
+        @include font_monserrat_normal_700;
+        @include font-size(16px, 17px);
+        color: $color_lavender;
+
+        &:hover {
+            color: white;
+            cursor: pointer;
+        }
+    }
+
+    .navbar__burger {
+        display: none;
+    }
+
+    .header__content {
+        height: 800px;
+    }
+
+    .header__title {
+        @include font_size (82px, 82px);
+        margin-top: 183px;
+    }
+
+    .header__text {
+        @include font_lato_normal_400;
+        @include font_size (30px, 30px);
+        margin-top: 19px;
+    }
+
+    .header__subtext {
+        @include font-size(16px, 16px);
+        margin-top: 19px;
+    }
+
+    .header__btn {
+        @include header_btn_medium_large;
+
+        &:hover {
+            @include header_btn_hover;
+
+        }}
+
+    }
