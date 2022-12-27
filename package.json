@@ -4,7 +4,9 @@
   "description": "Step Project 'Forkio'",
   "main": "index.js",
   "scripts": {
-    "start": "gulp build && gulp dev"
+    "start": "gulp build && gulp dev",
+    "build": "gulp build",
+    "test": "todo: add tests"
   },
   "repository": {
     "type": "git",
