@@ -1,0 +1,30 @@
+on:
+  push:
+    branches:
+    - main
+  workflow_dispatch:
+
+name: build-and-publish
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: npm install, build and test
+      run: |
+        npm install
+        npm run build
+    
+    - name: publish
+    - uses: cpina/github-action-push-to-another-repository@main
+      env:
+        SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }} 
+        #//TODO: де взяти сікрет?
+      with:
+        source-directory: 'dist' #//TODO: Визначити правильно директорію
+        destination-github-username: 'BogdanDraguzia'
+        destination-repository-name: 'BogdanDraguzia.github.io'
+        user-email: draguziabogdan@gmail.com
+        target-branch: main
+        target-directory: ./
