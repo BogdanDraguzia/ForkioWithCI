@@ -13,19 +13,19 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - name: npm install, build and test
-      run: |
-        ls -la
-        npm install
-        npm run build
+    #- name: npm install, build and test
+    #  run: |
+    #    ls -la
+    #    npm install
+    #    npm run build
     
     - uses: cpina/github-action-push-to-another-repository@main
       env:
         SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }} 
       with:
-        source-directory: 'dist' #//TODO: Визначити правильно директорію
+        source-directory: './' #//TODO: Визначити правильно директорію
         destination-github-username: 'BogdanDraguzia'
         destination-repository-name: 'BogdanDraguzia.github.io'
         user-email: draguziabogdan@gmail.com
         target-branch: master
-        target-directory: ./
+        target-directory: './'
