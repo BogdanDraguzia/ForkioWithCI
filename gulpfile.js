@@ -51,6 +51,11 @@ function copyImg() {
     .pipe(gulp.dest('dist/img'))
 }
 
+function copyHtml() {
+    return gulp.src('*.html')
+    .pipe(gulp.dest('dist'))
+}
+
 gulp.task('build', 
     gulp.series(
         'clean', 
@@ -58,17 +63,19 @@ gulp.task('build',
         processCss,
         cleanCompiledCss,
         concatAndMinifyJs, 
-        copyImg
+        copyImg,
+        copyHtml
 ))
 
 
 gulp.task('dev', ()=> {
     browserSync.init({
         server: {
-            baseDir: "./"
+            baseDir: "./dist"
             }
-    })
-    gulp.watch('index.html').on('change', browserSync.reload);
+    });
+
+    gulp.watch('index.html').on('change', gulp.series(copyHtml, browserSync.reload));
     gulp.watch('src/scss/**/*.scss', gulp.series(compileScss, processCss, cleanCompiledCss));
     gulp.watch('src/js/*.js', concatAndMinifyJs);
     gulp.watch('src/img/**/*.+(png|jpg|jpeg|gif|svg)', copyImg);
