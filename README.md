@@ -1,3 +1,5 @@
+https://github.com/BogdanDraguzia/ForkioWithCI/actions/workflows/BuildAndPublish.yml/badge.svg
+
 ## Name
 Step project 'Forkio'
 ## Description
